@@ -10,9 +10,18 @@ public class DrinkVoyageRepository {
 
     private final List<Drink> drinks = new ArrayList<>();
 
+    {drinks.add(new Drink("1","2","3","5",1));};
+
 
     public void addDrink(Drink drink) {
         drinks.add(drink);
     }
+
+
+
+    public List<Drink> getDrinks() {
+        return  drinks;
+    }
+
 
 }

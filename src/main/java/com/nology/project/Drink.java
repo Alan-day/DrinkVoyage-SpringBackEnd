@@ -7,6 +7,9 @@ public class Drink {
     private String name;
     private String category;
 
+    private String description;
+
+    private int drink_id;
 
 
 
@@ -62,9 +65,6 @@ public class Drink {
         this.drink_id = drink_id;
     }
 
-    private String description;
-
-    private int drink_id;
 
 
 

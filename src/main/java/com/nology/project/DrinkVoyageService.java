@@ -4,6 +4,8 @@ package com.nology.project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DrinkVoyageService {
 
@@ -16,6 +18,8 @@ public class DrinkVoyageService {
         drinkVoyageRepository.addDrink(drink);
     }
 
-
+    public List<Drink> getDrinks() {
+        return  drinkVoyageRepository.getDrinks();
+    }
 
 }
