@@ -21,11 +21,7 @@ public class DrinkVoyageController {
 
 
 
-    @PostMapping("/home")
-    public Drink createDrink(@RequestBody Drink drink) {
-        drinkVoyageService.addDrink(drink);
-        return drink;
-    }
+
 
 
     @GetMapping("/greet")
@@ -34,10 +30,14 @@ public class DrinkVoyageController {
     }
 
     @GetMapping("/list")
-    public List <Drink> drinks() {
+    public List <Drink> getDrinks() {
         return drinkVoyageService.getDrinks();
     }
 
+    @GetMapping("/countries")
+    public List <String> drinks() {
+        return drinkVoyageService.getCountries();
+    }
 
 
 

@@ -11,15 +11,16 @@ public class DrinkVoyageService {
 
 
     @Autowired
-    DrinkVoyageRepository drinkVoyageRepository;
+    DrinkVoyageRep drinkVoyageRep;
 
 
-    public void addDrink(Drink drink) {
-        drinkVoyageRepository.addDrink(drink);
+    public List <Drink> getDrinks() {
+        return  drinkVoyageRep.getDrinks();
     }
 
-    public List<Drink> getDrinks() {
-        return  drinkVoyageRepository.getDrinks();
+    public List <String> getCountries() {
+        return  drinkVoyageRep.getCountries();
     }
+
 
 }

@@ -1,25 +1,35 @@
 package com.nology.project;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Drink {
 
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
 
+    private int id;
     private String originCountry;
     private String name;
     private String category;
 
     private String description;
 
-    private int drink_id;
 
 
 
 
-    public Drink(String originCountry, String name, String category, String description, int drink_id) {
+
+    public Drink(String originCountry, String name, String category, String description, int id) {
         this.originCountry = originCountry;
         this.name = name;
         this.category = category;
         this.description = description;
-        this.drink_id = drink_id;
+        this.id = id;
     }
 
     public Drink() {
@@ -58,11 +68,11 @@ public class Drink {
     }
 
     public int getDrink_id() {
-        return drink_id;
+        return id;
     }
 
-    public void setDrink_id(int drink_id) {
-        this.drink_id = drink_id;
+    public void setDrink_id(int id) {
+        this.id = id;
     }
 
 
