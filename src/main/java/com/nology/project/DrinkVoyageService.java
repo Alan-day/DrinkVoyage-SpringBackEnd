@@ -14,6 +14,16 @@ public class DrinkVoyageService {
     DrinkVoyageRep drinkVoyageRep;
 
 
+    public Drink addDrink(Drink drink) {
+
+        Drink newDrink = drinkVoyageRep.save(drink);
+
+        System.out.println(newDrink);
+        return newDrink;
+
+    }
+
+
     public List <Drink> getDrinks() {
         return  drinkVoyageRep.getDrinks();
     }
