@@ -20,7 +20,7 @@ public class DrinkVoyageController {
 
 
     @PostMapping("/createDrink")
-    public ResponseEntity <Drink> createGreeting(@RequestBody Drink drink) {
+    public ResponseEntity <Drink> createDrink(@RequestBody Drink drink) {
         Drink newDrink = drinkVoyageService.addDrink(drink);
         return ResponseEntity.status(HttpStatus.CREATED).body(newDrink);
     }
@@ -42,7 +42,11 @@ public class DrinkVoyageController {
 
 
 
-
+    @DeleteMapping("/list/{id}")
+    public ResponseEntity<Void> deleteDrinkById(@PathVariable int id) {
+        drinkVoyageService.deleteDrinkById(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 
 
 

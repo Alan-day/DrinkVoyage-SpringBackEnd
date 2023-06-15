@@ -16,6 +16,6 @@ public interface DrinkVoyageRep extends JpaRepository<Drink, Integer>  {
     List<String> getCountries();
 
 
-
+    void deleteDrinkById(int id);
     }
 
