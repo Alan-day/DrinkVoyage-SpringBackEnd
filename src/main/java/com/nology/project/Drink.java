@@ -67,11 +67,11 @@ public class Drink {
         this.description = description;
     }
 
-    public int getDrink_id() {
+    public int getDrinkId() {
         return id;
     }
 
-    public void setDrink_id(int id) {
+    public void setDrinkId(int id) {
         this.id = id;
     }
 

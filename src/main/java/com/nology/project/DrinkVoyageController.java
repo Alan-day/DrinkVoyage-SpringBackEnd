@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 
 
@@ -26,8 +27,10 @@ public class DrinkVoyageController {
     }
 
 
-
-
+    @GetMapping("/list/{id}")
+    public ResponseEntity<Drink> getDrinkById(@PathVariable int id) {
+        return ResponseEntity.status(HttpStatus.OK).body(drinkVoyageService.getDrinkById(id));
+    }
 
 
     @GetMapping("/list")
@@ -35,14 +38,18 @@ public class DrinkVoyageController {
         return ResponseEntity.status(HttpStatus.OK).body(drinkVoyageService.getDrinks());
     }
 
-    @GetMapping("/countries")
-    public List <String> drinks() {
-        return drinkVoyageService.getCountries();
+    @GetMapping("/list/categories")
+    public ResponseEntity <List<Option>> getDrinksByCategory() {
+        return ResponseEntity.status(HttpStatus.OK).body(drinkVoyageService.getDrinksByCategory());
     }
 
+    @PutMapping("/list/edit/{id}")
+    public ResponseEntity<Drink> updateDrink(@RequestBody Drink newDrink, @PathVariable int id) {
+        Drink updatedDrink = drinkVoyageService.updateDrink(newDrink, id);
+        return ResponseEntity.status(HttpStatus.OK).body(updatedDrink);
+    }
 
-
-    @DeleteMapping("/list/{id}")
+    @DeleteMapping("/list/edit/{id}")
     public ResponseEntity<Void> deleteDrinkById(@PathVariable int id) {
         drinkVoyageService.deleteDrinkById(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
