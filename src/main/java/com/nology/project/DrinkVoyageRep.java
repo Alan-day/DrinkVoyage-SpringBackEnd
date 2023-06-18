@@ -12,12 +12,28 @@ public interface DrinkVoyageRep extends JpaRepository<Drink, Integer>  {
     @Query(value= "SELECT * FROM drinks.drink", nativeQuery = true)
     List<Drink> getDrinks();
 
-    @Query(value= "SELECT DISTINCT origin_country FROM drinks", nativeQuery = true)
-    List<String> getCountries();
+    @Query(value= "SELECT * FROM drinks.drink WHERE category = 'wine'", nativeQuery = true)
+    List<Drink> getWine();
+
+    @Query(value= "SELECT * FROM drinks.drink WHERE category = 'beer'", nativeQuery = true)
+    List<Drink> getBeer();
+    @Query(value= "SELECT * FROM drinks.drink WHERE category = 'whiskey'", nativeQuery = true)
+    List<Drink> getWhiskey();
+
+    @Query(value= "SELECT * FROM drinks.drink WHERE category = 'vodka'", nativeQuery = true)
+    List<Drink> getVodka();
+
+    @Query(value= "SELECT * FROM drinks.drink WHERE category IN ('raki', 'rakija', 'rakia')", nativeQuery = true)
+    List<Drink> getRakias();
+
+    @Query(value= "SELECT * FROM drinks.drink WHERE category NOT IN ('wine', 'vodka', 'whiskey', 'beer', 'rakia', 'rakija', 'raki')", nativeQuery = true)
+    List<Drink> getOther();
 
 
 
-    List<Drink> getAllDrinksByCategory(String category);
+
+
+
 
     void deleteDrinkById(int id);
     }

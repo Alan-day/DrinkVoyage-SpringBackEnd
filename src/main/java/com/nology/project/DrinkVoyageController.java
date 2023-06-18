@@ -38,10 +38,57 @@ public class DrinkVoyageController {
         return ResponseEntity.status(HttpStatus.OK).body(drinkVoyageService.getDrinks());
     }
 
-    @GetMapping("/list/categories")
-    public ResponseEntity <List<Option>> getDrinksByCategory() {
-        return ResponseEntity.status(HttpStatus.OK).body(drinkVoyageService.getDrinksByCategory());
+
+
+
+
+
+
+
+
+
+
+    @GetMapping("/list/wines")
+    public ResponseEntity<List<Drink>> getWines() {
+
+        return ResponseEntity.status(HttpStatus.OK).body(drinkVoyageService.getWines());
     }
+
+
+    @GetMapping("/list/whiskeys")
+    public ResponseEntity<List<Drink>> getWhiskeys() {
+
+        return ResponseEntity.status(HttpStatus.OK).body(drinkVoyageService.getWhiskeys());
+    }
+
+    @GetMapping("/list/beers")
+    public ResponseEntity<List<Drink>> getBeers() {
+
+        return ResponseEntity.status(HttpStatus.OK).body(drinkVoyageService.getBeers());
+    }
+    @GetMapping("/list/rakias")
+    public ResponseEntity<List<Drink>> getRakias() {
+
+        return ResponseEntity.status(HttpStatus.OK).body(drinkVoyageService.getRakias());
+    }
+
+    @GetMapping("/list/vodkas")
+    public ResponseEntity<List<Drink>> getVodkas() {
+
+        return ResponseEntity.status(HttpStatus.OK).body(drinkVoyageService.getVodkas());
+    }
+
+
+
+    @GetMapping("/list/others")
+    public ResponseEntity<List<Drink>> getOthers() {
+
+        return ResponseEntity.status(HttpStatus.OK).body(drinkVoyageService.getOthers());
+    }
+
+
+
+
 
     @PutMapping("/list/edit/{id}")
     public ResponseEntity<Drink> updateDrink(@RequestBody Drink newDrink, @PathVariable int id) {

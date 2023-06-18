@@ -4,7 +4,11 @@ package com.nology.project;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 import java.util.List;
@@ -32,20 +36,36 @@ public class DrinkVoyageService {
     }
 
 
-
-
-
-
-
-
 // getting the cards
     public List <Drink> getDrinks() {
         return  drinkVoyageRep.getDrinks();
+    } // why does it work with the same name of the method in the repository?
+
+// getting different drinks
+    public List <Drink> getWines() {
+        return  drinkVoyageRep.getWine();
     }
-// getting available countries
-    public List <String> getCountries() {
-        return  drinkVoyageRep.getCountries();
+
+    public List<Drink> getBeers() {
+        return drinkVoyageRep.getBeer();
     }
+
+    public List<Drink> getVodkas() {
+        return drinkVoyageRep.getVodka();
+    }
+
+    public List<Drink> getRakias() {
+        return drinkVoyageRep.getRakias();
+    }
+
+    public List<Drink> getOthers() {
+        return drinkVoyageRep.getOther();
+    }
+    public List<Drink> getWhiskeys() {
+        return drinkVoyageRep.getWhiskey();
+    }
+
+
 
 
     // deleting a card
@@ -58,6 +78,8 @@ public class DrinkVoyageService {
 
         drinkVoyageRep.deleteDrinkById(id);
     }
+
+
 
 
 
@@ -75,16 +97,6 @@ public class DrinkVoyageService {
     }
 
 
-    public List<Drink> getDrinksByCategory(String category, int limit) {
-        String formattedCategory = category.replace("-", " ");
-
-        List<Drink> categories = drinkVoyageRep.getAllDrinksByCategory(formattedCategory);
-
-        return categories
-                .stream()
-                .limit(limit)
-                .collect(Collectors.toList());
-    }
 
 
 
