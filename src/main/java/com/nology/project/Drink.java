@@ -19,17 +19,19 @@ public class Drink {
 
     private String description;
 
+    private String flag;
 
 
 
 
 
-    public Drink(String originCountry, String name, String category, String description, int id) {
+    public Drink(String originCountry, String name, String category, String description, int id, String flag) {
         this.originCountry = originCountry;
         this.name = name;
         this.category = category;
         this.description = description;
         this.id = id;
+        this.flag = flag;
     }
 
     public Drink() {
@@ -75,7 +77,13 @@ public class Drink {
         this.id = id;
     }
 
+    public String getFlag() {
+        return flag;
+    }
 
+    public void setFlag(String flag) {
+        this.flag = flag;
+    }
 
 
 

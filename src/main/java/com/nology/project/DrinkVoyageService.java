@@ -87,7 +87,7 @@ public class DrinkVoyageService {
     public Drink updateDrink(Drink newDrink, int id) {
 
         if (!drinkVoyageRep.existsById(id)) {
-            System.out.print("Greeting Not Found");
+            System.out.print("Drink not found");
         }
 
         Drink updatedDrink = drinkVoyageRep.save(newDrink);
