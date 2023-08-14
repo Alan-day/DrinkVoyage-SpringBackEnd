@@ -15,7 +15,8 @@ import java.util.List;
 
 public class DrinkVoyageController {
 
-    @Autowired
+    @Autowired // injection point
+
     DrinkVoyageService drinkVoyageService;
 
 
@@ -37,15 +38,6 @@ public class DrinkVoyageController {
     public ResponseEntity< List <Drink>> getDrinks() {
         return ResponseEntity.status(HttpStatus.OK).body(drinkVoyageService.getDrinks());
     }
-
-
-
-
-
-
-
-
-
 
 
     @GetMapping("/list/wines")

@@ -39,9 +39,9 @@ public class DrinkVoyageService {
 // getting the cards
     public List <Drink> getDrinks() {
         return  drinkVoyageRep.getDrinks();
-    } // why does it work with the same name of the method in the repository?
-
 // getting different drinks
+} // why does it work with the same name of the method in the repository?
+
     public List <Drink> getWines() {
         return  drinkVoyageRep.getWine();
     }
@@ -78,8 +78,6 @@ public class DrinkVoyageService {
 
         drinkVoyageRep.deleteDrinkById(id);
     }
-
-
 
 
 
